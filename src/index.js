@@ -1,12 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+/*----- CSS -----*/
+import './index.css';
+
+/*----- Pages Components -----*/
+import App from 'App';
+import Main from 'Pages/Main.jsx';
+import Store from 'Pages/Store.jsx';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+
+    <BrowserRouter>
+      <Routes>
+        
+        <Route path="/" element={<Main />} />
+        <Route path="/store" element={<Store />} />
+        {/* <Route path="/" element={<App />} /> */}
+
+      </Routes>
+    </BrowserRouter>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
